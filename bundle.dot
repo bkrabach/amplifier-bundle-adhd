@@ -1,37 +1,37 @@
-// This repository packages an "ADHD support" add-on for the Amplifier AI assistant: a small always-on rulebook that keeps every AI conversation ADHD-friendly, built on top of two shared Amplifier building blocks.
-digraph i_have_adhd {
+// The "adhd" bundle repository: a small Amplifier add-on that keeps a set of ADHD-support ground rules loaded into every AI conversation, building on shared Microsoft Amplifier building blocks.
+digraph adhd {
     rankdir=LR
     fontname="Helvetica"
     fontsize=12
-    label="ADHD Support Assistant\ni-have-adhd v0.1.0 — an add-on package that teaches the AI to work in an ADHD-friendly way"
+    label="ADHD Support Assistant Add-on v0.1.0\nA small package that teaches the AI assistant a standing set of ADHD-friendly working rules"
     labelloc=t
     labeljust=c
     nodesep=0.6
     ranksep=0.7
     bgcolor="white"
-    source_hash="69fb0122a5210dd2b1d3a8e8a3f2efea474e96c025e9b0ea3a99287293a59d67"
+    source_hash="e4a8ec936b45272465f34a427f775d2133c1311dd898be38edca6a47bec1c57e"
 
     node [fontname="Helvetica", fontsize=11, style="filled,rounded"]
     edge [fontname="Helvetica", fontsize=9]
 
-    root_i_have_adhd [label="Main Package: ADHD Support Assistant\ni-have-adhd v0.1.0 · 0 tools · 0 agents\n~204 tok aggregate", shape=box, fillcolor="#80cbc4", style="filled,rounded,bold", penwidth=2]
+    root_adhd [label="ADHD Add-on Package v0.1.0\nThe main entry point that ties everything together\n0 tools · 0 agents\n~198 tok aggregate", shape=box, fillcolor="#80cbc4", style="filled,rounded,bold", penwidth=2]
 
     subgraph cluster_behaviors {
-        label="Built-In Behavior (always active)"
+        label="Behaviors — features this package switches on"
         style="filled"
         fillcolor="#f9f9f9"
         color="#999999"
 
-        beh_i_have_adhd_always_on [label="Always-On ADHD Guidance\ni-have-adhd-always-on · 1 ctx\n~1695 tok", shape=box, fillcolor="#e0f2f1", style="filled,rounded"]
+        beh_adhd_always_on [label="Always-On ADHD Guidance\nKeeps the ADHD rules active in every conversation\n1 ctx · ~1691 tok", shape=box, fillcolor="#e0f2f1", style="filled,rounded"]
     }
 
     subgraph cluster_context {
-        label="Knowledge Files (what the AI reads)"
+        label="Reference Documents — the written guidance itself"
         style="filled"
         fillcolor="#f9f9f9"
         color="#999999"
 
-        ctx_adhd_ruleset_md [label="The ADHD Rulebook\nadhd-ruleset.md\n~1501 tok", shape=box, fillcolor="#e1bee7", style="filled,rounded"]
+        ctx_adhd_ruleset_md [label="The ADHD Rulebook (adhd-ruleset.md)\nThe written rules the assistant follows\n~1501 tok", shape=box, fillcolor="#e1bee7", style="filled,rounded"]
     }
 
     subgraph cluster_legend {
@@ -42,23 +42,23 @@ digraph i_have_adhd {
         fontsize=9
 
         leg_root [label="main package", shape=box, fillcolor="#80cbc4", style="filled,rounded,bold", fontsize=9]
-        leg_behavior [label="behavior (feature add-on)", shape=box, fillcolor="#e0f2f1", style="filled,rounded", fontsize=9]
-        leg_agent [label="agent (AI helper)", shape=box, fillcolor="#c8e6c9", style="filled,rounded", fontsize=9]
-        leg_module [label="module (code tool)", shape=box, fillcolor="#bbdefb", style="filled,rounded", fontsize=9]
-        leg_provider [label="provider (AI model source)", shape=box, fillcolor="#e0e0e0", style="filled,rounded", fontsize=9]
-        leg_context [label="knowledge file", shape=box, fillcolor="#e1bee7", style="filled,rounded", fontsize=9]
+        leg_behavior [label="feature / behavior", shape=box, fillcolor="#e0f2f1", style="filled,rounded", fontsize=9]
+        leg_agent [label="specialist helper (agent)", shape=box, fillcolor="#c8e6c9", style="filled,rounded", fontsize=9]
+        leg_module [label="software component (module)", shape=box, fillcolor="#bbdefb", style="filled,rounded", fontsize=9]
+        leg_provider [label="AI service connection (provider)", shape=box, fillcolor="#e0e0e0", style="filled,rounded", fontsize=9]
+        leg_context [label="reference document", shape=box, fillcolor="#e1bee7", style="filled,rounded", fontsize=9]
         leg_standalone [label="ready-to-run package", shape=box, fillcolor="#80cbc4", style="filled,rounded", fontsize=9]
-        leg_experiment [label="experiment (trial idea)", shape=box, fillcolor="#e1bee7", style="filled,rounded", fontsize=9]
-        leg_ext_cost [label="from outside, adds cost", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2, fontsize=9]
-        leg_ext_muted [label="from outside, no cost", shape=box, fillcolor="#f5f5f5", style="dashed", fontsize=9]
+        leg_experiment [label="experimental piece", shape=box, fillcolor="#e1bee7", style="filled,rounded", fontsize=9]
+        leg_ext_cost [label="from another repo (adds size)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2, fontsize=9]
+        leg_ext_muted [label="from another repo (no added size)", shape=box, fillcolor="#f5f5f5", style="dashed", fontsize=9]
     }
 
-    disclaimer [label="Size estimates: ~4 chars/token\nSolid border = lives in this repo (counted)\nDashed + red = comes from outside, hidden cost (not counted)\nDashed + muted = comes from outside, no cost\nExcludes: sub-session costs, runtime-dynamic", shape=note, fillcolor="#eceff1", style="filled", fontsize=9]
+    disclaimer [label="Size estimates: ~4 characters per token\nSolid border = lives in this repo (size counted)\nDashed + red = comes from elsewhere, adds hidden size (not counted)\nDashed + grey = comes from elsewhere, adds no size\nNot shown: costs of helper sessions and anything decided at runtime", shape=note, fillcolor="#eceff1", style="filled", fontsize=9]
 
-    ext_githttps___github_com_microsoft_amplifier_foundation_main [label="Core AI Toolkit (shared)\namplifier-foundation\n(external, cost)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
-    ext_githttps___github_com_microsoft_amplifier_bundle_modes_main [label="Work-Modes Add-On (shared)\namplifier-bundle-modes\n(external, cost)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
+    ext_githttps___github_com_microsoft_amplifier_foundation_main [label="Amplifier Foundation\nShared base toolkit from Microsoft (separate repo, adds size)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
+    ext_githttps___github_com_microsoft_amplifier_bundle_modes_main [label="Amplifier Modes\nShared add-on for switching working styles (separate repo, adds size)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
 
-    root_i_have_adhd -> ext_githttps___github_com_microsoft_amplifier_foundation_main [style=dashed]
-    root_i_have_adhd -> ext_githttps___github_com_microsoft_amplifier_bundle_modes_main [style=dashed]
-    beh_i_have_adhd_always_on -> ctx_adhd_ruleset_md [style=dotted, color=purple]
+    root_adhd -> ext_githttps___github_com_microsoft_amplifier_foundation_main [style=dashed]
+    root_adhd -> ext_githttps___github_com_microsoft_amplifier_bundle_modes_main [style=dashed]
+    beh_adhd_always_on -> ctx_adhd_ruleset_md [style=dotted, color=purple]
 }
