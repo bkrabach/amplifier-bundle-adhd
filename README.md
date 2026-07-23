@@ -1,4 +1,4 @@
-# amplifier-bundle-i-have-adhd
+# amplifier-bundle-adhd
 
 ADHD-shaped output for [Amplifier](https://github.com/microsoft/amplifier):
 answers lead with the next action, multi-step work is numbered, state is
@@ -21,7 +21,7 @@ and stronger on the source's core requirement.
 ## Usage
 
 ```bash
-amplifier run --bundle git+https://github.com/<you>/amplifier-bundle-i-have-adhd@main
+amplifier run --bundle git+https://github.com/bkrabach/amplifier-bundle-adhd@main
 ```
 
 | Action | How |
@@ -39,9 +39,13 @@ every session — the Amplifier equivalent of upstream's
 
 ```yaml
 includes:
-  - bundle: git+https://github.com/<you>/amplifier-bundle-i-have-adhd@main
-  - bundle: git+https://github.com/<you>/amplifier-bundle-i-have-adhd@main#subdirectory=behaviors/always-on.yaml
+  - bundle: git+https://github.com/bkrabach/amplifier-bundle-adhd@main
+  - bundle: adhd:behaviors/always-on
 ```
+
+(The first include brings the bundle and registers the `adhd:` namespace; the
+second composes the opt-in behavior — this exact pattern is what the DTU
+validation exercised.)
 
 If you compose always-on, do not also activate `/adhd` (harmless but wasteful
 double injection).

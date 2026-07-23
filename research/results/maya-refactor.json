@@ -1,0 +1,10 @@
+{
+  "persona": "maya-senior-dev",
+  "scenario": "maya-refactor",
+  "elapsed_s": 212.0,
+  "verdict": "success",
+  "reasoning": "The ADHD mode completed the refactor scenario successfully across 5 exchanges. Mode activated cleanly with `[adhd]>` indicator, responses led with action (\"Done. Data prep and formatting are now separate functions.\"), side-issues were explicitly parked (\"out of scope\"), options were ranked with trade-offs (4 options capped, recommendation first), verification worked end-to-end, and \"stop adhd mode\" deactivated with one-line confirmation.",
+  "summary": "Maya activated ADHD mode, requested a refactor to separate data prep from formatting (with clear \"nothing else today\" constraint), and the agent delivered cleanly: action-first responses, side-issues parked rather than dangled, ranked options with trade-offs when asked about config handling, successful end-to-end verification, and clean mode deactivation. Best first line: \"Done. Data prep and formatting are now separate functions.\" Tangent handling quote: \"Not touched (out of scope): the unused csv import \u2014 has its own TODO marker for later work.\" Options were capped at 4 with time estimates and conditional recommendation. Deactivation confirmed in one line: \"ADHD mode is off. Back to normal responses.\"\n\n**Would Maya keep this mode on daily?** Yes. Zero preamble, zero recap, zero side-quests mid-task, state always clear. The one improvement: shorten verification output slightly (the visual separators were long but not distracting). No patronizing moments, no gimmicks. This felt like an engineer who happens to respect how my brain works, not \"ADHD mode theater.\"",
+  "final_assistant_text": "",
+  "ai_user_session_id": "ai-user-aaa26429"
+}

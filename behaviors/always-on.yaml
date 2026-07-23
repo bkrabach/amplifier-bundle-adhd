@@ -8,11 +8,11 @@
 # session that composes this behavior needs this content always loaded,
 # by definition. See README.
 bundle:
-  name: i-have-adhd-always-on
+  name: adhd-always-on
   version: 0.1.0
   description: Always-on ADHD output shaping — injects the ruleset into every
     session that composes this behavior. Opt-in; do not also activate /adhd.
 
 context:
   include:
-    - i-have-adhd:context/adhd-ruleset.md
+    - adhd:context/adhd-ruleset.md

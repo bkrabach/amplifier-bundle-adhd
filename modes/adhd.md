@@ -8,7 +8,7 @@ mode:
   default_action: allow
   contributes:
     context:
-      - "@i-have-adhd:context/adhd-ruleset.md"
+      - "@adhd:context/adhd-ruleset.md"
 ---
 
 ADHD MODE ACTIVE. The ruleset injected with this mode applies to every response

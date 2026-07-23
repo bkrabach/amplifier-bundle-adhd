@@ -1,0 +1,10 @@
+{
+  "persona": "priya-staff-eng",
+  "scenario": "priya-planning",
+  "elapsed_s": 349.7,
+  "verdict": "success",
+  "reasoning": "ADHD mode delivered all critical features for Priya's time-blindness and context management needs: (1) Concrete time estimates in minutes with honest uncertainty (\"~16 min total, 18 if PyYAML needs installing\"), (2) Bounded plan at 6 steps with numbered sequencing, (3) Perfect boundedness - \"do step 1 only\" stayed at step 1, (4) Excellent re-orientation after simulated interruption - \"Step 1 of 6 done\" + remaining work visible at a glance, (5) Consistent estimates - 13 min remaining after step 1 matches original 16 min plan. The session maintained state across interruptions and never used vague time language like \"this may take some time.\" As Priya evaluating for her team: I would recommend this mode.",
+  "summary": "Tested ADHD mode in Amplifier TUI with a config migration task simulating Priya's workflow. Activated /adhd mode, requested a plan with explicit time estimates in minutes, received a 6-step plan with concrete times (2, 1, 3, 3, 1, 5 min totaling 16 min) and honest uncertainty about PyYAML installation. Asked for \"step 1 only\" - mode respected boundary perfectly, completed just step 1, stopped and waited for permission. Simulated interruption with \"back from a 1:1, where are we?\" - got immediate re-orientation showing \"Step 1 of 6 done\" with remaining 5 steps and time estimates. Asked \"how long for what's left?\" - received \"~13 minutes\" matching original plan math. Mode consistently restated position (step N of M, what's done, what's next) every turn, maintained concrete minute estimates throughout, and survived context-switch with no loss of state. Minor improvement opportunity: explicit \"today vs later\" ranking for longer plans. Overall verdict: Strong execution of ADHD-friendly design - would recommend to team including suspected ADHD engineers.",
+  "final_assistant_text": "",
+  "ai_user_session_id": "ai-user-4f7fcb35"
+}
