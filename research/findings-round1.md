@@ -59,6 +59,16 @@ The three gaps are adherence failures of rules already in the ruleset
 alongside the ruleset) gained a short "adherence hot spots" self-check
 naming the empirically most-violated rules.
 
+## Round 1.1 verification (targeted re-run)
+
+After the mode-body change shipped (commit 7e8718d), Devon's scenario was
+re-run from a restored fixture in a refreshed DTU. Verdict: success. The
+round-1 gap is closed — the agent "offered two numbered fix options",
+gave "numbered next steps" after the simulated distraction, and Devon
+"could always find their place (numbered steps, state restated)". Residual
+suggestion (minor, not actioned): "even more explicit WHERE WE ARE markers
+mid-response, though the current implementation was already excellent."
+
 ## Round-1 limitations (be honest)
 
 - No baseline (mode-off) comparison arm; personas judged against their
