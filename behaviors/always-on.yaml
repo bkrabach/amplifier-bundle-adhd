@@ -1,0 +1,18 @@
+# POLICY BEHAVIOR — intentionally NOT included by bundle.md.
+# Composing this behavior = always-on (the Amplifier equivalent of upstream's
+# ~/.claude/.i-have-adhd-always flag file).
+#
+# NOTE: the ruleset is ~1.4K tokens, above the usual 1K context.include
+# ceiling flagged by validate-bundle-repo. Justified exception: always-on
+# injection IS this behavior's entire purpose, and it is opt-in — every
+# session that composes this behavior needs this content always loaded,
+# by definition. See README.
+bundle:
+  name: i-have-adhd-always-on
+  version: 0.1.0
+  description: Always-on ADHD output shaping — injects the ruleset into every
+    session that composes this behavior. Opt-in; do not also activate /adhd.
+
+context:
+  include:
+    - i-have-adhd:context/adhd-ruleset.md
