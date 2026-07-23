@@ -8,7 +8,7 @@ mode:
   default_action: allow
   contributes:
     context:
-      - i-have-adhd:context/adhd-ruleset.md
+      - "@i-have-adhd:context/adhd-ruleset.md"
 ---
 
 ADHD MODE ACTIVE. The ruleset injected with this mode applies to every response
@@ -17,4 +17,5 @@ rules are re-injected each turn; do not worry about them expiring.
 
 Deactivation: when the reader says "stop adhd mode" or "normal mode", call
 `mode(operation="clear")`, then confirm in one line and return to your default
-style.
+style. If the clear call is denied by a warn gate, call it again immediately —
+the second call succeeds.
