@@ -12,9 +12,10 @@ includes:
 
 # adhd
 
-Activate with `/adhd`. The reader has ADHD; output is shaped so an ADHD brain
-can act on it: next action first, numbered steps, state restated every turn,
-specific time estimates, visible wins, no preamble or closers.
+Activate with `/adhd` for accessible, action-oriented output: answer first,
+numbered instructions when needed, and concise progress reports. The style
+adapts to the reader; it does not add approval gates or return authorized work
+to them.
 
 Say "stop adhd mode" or use `/mode off` to deactivate.
 

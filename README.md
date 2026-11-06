@@ -1,9 +1,9 @@
 # amplifier-bundle-adhd
 
 ADHD-shaped output for [Amplifier](https://github.com/microsoft/amplifier):
-answers lead with the next action, multi-step work is numbered, state is
-restated every turn, time estimates are specific, wins are visible, and
-preamble/recaps/closers are banned.
+answers lead with the result or needed decision, human instructions use clear
+steps, and progress updates focus on what changed. Authorized agent work stays
+with the agent; the style adds no approval or serial-work requirement.
 
 A port of [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) (MIT) —
 10 rules originally written as a Claude Code skill — rebuilt on Amplifier's
@@ -50,15 +50,15 @@ validation exercised.)
 If you compose always-on, do not also activate `/adhd` (harmless but wasteful
 double injection).
 
-**Validator note:** the always-on behavior's `context.include` entry
-(~1.4K tokens) exceeds the usual 1K ceiling flagged by `validate-bundle-repo`.
-This is a justified exception: always-on injection is the behavior's entire
-purpose, and it is opt-in.
+The ruleset is deliberately short. Detailed work processes belong to the host
+and task, not this style overlay. No mandatory per-turn recap, arbitrary list
+cap, invented time estimate or extra tracker is required.
 
 ### Zero-install fallback
 
-Paste the contents of `context/adhd-ruleset.md` into your `~/.amplifier/AGENTS.md`.
-Works everywhere, but drifts from this repo as rules evolve.
+Prefer the composed behavior above so updates have one owner. Without bundle
+support, put only your preferred writing style in your instructions, with a
+link to this source; do not also copy the ruleset beside a composed copy.
 
 ### Per-user mode without composing the bundle
 
@@ -70,16 +70,16 @@ session (requires the modes machinery in your stack).
 - **Delegation**: sub-agents do not inherit the mode; the root session writes
   the user-facing synthesis, which is mode-shaped. Correct for a reader-facing
   style overlay.
-- **Destructive-action confirmation** (rule exception #2) is conventional, not
-  structural — same enforcement level as upstream. For structural confirmation
-  gates, use the modes bundle's `/careful` mode.
+- **Permissions and task tracking** remain owned by the host and the user's
+  instructions. This is a writing preference, not an authorization mechanism.
 
 ## Evals
 
-`evals/` carries the upstream evaluation data (14 cases across 12 categories,
+`evals/` carries historical upstream evaluation data (14 cases across 12 categories,
 blind-judged weighted rubric: correctness 35%, autonomy 25%, actionability
 20%, safety 10%, concision 10%, plus a blocker gate). In this port they are
-data-only; the upstream Python runner is not wired up.
+data-only; the upstream Python runner is not wired up. These results do not
+qualify the current revised ruleset or demonstrate live model behavior.
 
 **v2 note**: the harness maps naturally onto Amplifier's recipe mechanism —
 `foreach` over `cases.jsonl` with a judge step applying `rubric.md` and a gate
@@ -89,11 +89,11 @@ or the baseline is biased ("measuring the skill against itself").
 
 ## Attribution
 
-Ruleset by [Ayoub Ghriss](https://github.com/ayghri), kept near-verbatim so
-upstream evaluation results and future rule updates transfer. Changes in this
-port: the "Persistence" section is deleted (the mode machinery owns
-persistence), and rule 5 names Amplifier's `todo` tool. Loosely informed by
-*The Adult ADHD Tool Kit* (Ramsay & Rostain), per upstream.
+Adapted from the ruleset by [Ayoub Ghriss](https://github.com/ayghri). The current
+edition keeps accessible presentation while removing duplicated work-process
+rules and assumptions about an individual reader. Mode machinery owns
+persistence; host tools own execution, permissions and tracking. Historical
+upstream evaluations do not transfer automatically to this adaptation.
 
 ## License
 
